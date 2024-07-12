@@ -1,0 +1,43 @@
+/*# sourceMappingURL=custom-rtl.min.css.map */
+
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url(../fonts/ArbFONTS-Droid.Arabic.Kufi_DownloadSoftware.iR_.ttf);
+}
+
+.font {
+    font-family: 'Droid Arabic Kufi' !important;
+
+}
+
+body {
+    font-family: 'Droid Arabic Kufi' !important;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Droid Arabic Kufi' !important;
+}
+
+i,
+strong {
+    font-family: 'Droid Arabic Kufi' !important;
+
+}
+
+.table_do td:last-child {
+    padding: 9px !important;
+}
+
+.table_do td:first-child {
+    padding: 9px !important;
+}
+.itme_label
+{
+    margin-right:15px ;
+}

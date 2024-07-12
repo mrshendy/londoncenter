@@ -1,0 +1,54 @@
+
+/*# sourceMappingURL=custom-rtl.min.css.map */
+body
+{
+    direction: rtl ;
+}
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url(../fonts/ArbFONTS-Droid.Arabic.Kufi_DownloadSoftware.iR_.ttf);
+}
+
+.font {
+    font-family: 'Droid Arabic Kufi' !important;
+
+}
+
+body {
+    font-family: 'Droid Arabic Kufi' !important;
+
+}
+h1,h2,h3,h4,h5,h6
+{
+     font-family: 'Droid Arabic Kufi' !important;
+}
+i,strong {
+    font-family: 'Droid Arabic Kufi' !important;
+
+}
+.table_do td:last-child{
+  padding: 9px !important;
+}
+.table_do td:first-child {
+    padding: 9px !important;
+}
+.itme_label {
+    margin-left: 15px;
+}
+.deleted-text {
+    text-decoration: line-through double red;
+}
+.navbar-menu .navbar-nav .nav-link[data-bs-toggle=collapse]:after {
+    display: block;
+    content: "\f0141";
+    font-family: "Material Design Icons";
+    margin-right: auto;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+    font-size: 1.05rem;
+    position: absolute;
+    left: 18px;
+    color: var(--vz-vertical-menu-title-color);
+}
