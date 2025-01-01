@@ -286,5 +286,6 @@ return [
        'thursday'  => 'Thursday',
        'friday'  => 'Friday',
        'doctor'  => 'Doctor',
+      'seminars_and_conferences' => 'Seminars And Conferences',      
 
 ];

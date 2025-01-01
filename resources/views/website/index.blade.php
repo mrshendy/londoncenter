@@ -172,12 +172,14 @@
                 <h1 class="mb-5">{{ trans('trans_website.our_gallery_london_centre_training') }}</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
-                @foreach ($gallery as $data)
+                @foreach ($galleryhome as $data)
                     <div class="testimonial-item text-center">
                         <img class="border rounded-circle p-2 mx-auto mb-3" style="height: 350px;width: 350px;" src="{{ asset($data->img) }}">
                     </div>
                 @endforeach
             </div>
+              <a class="btn btn-primary py-3 px-5 mt-2"
+                href="{{ url('/' . ($page = 'gallery')) }}">{{ trans('trans_website.read_more') }}</a>
         </div>
     </div>
     <!-- Testimonial End -->

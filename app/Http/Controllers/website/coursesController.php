@@ -32,7 +32,7 @@ class coursesController extends Controller
         $footer_data = generalsetting::first();
         $sections = sections::where('status', 1)->get();
         $place = place::where('status', 1)->get();
-        $gallery = gallery::where('status', 1)->take(5)->get();
+        $gallery = gallery::where('status', 1)->take(6)->get();
         $courses = courses::where('id_sections', 7)->where('status', 1)->orderBy('date')->get();
         $category = sections::where('status', 1)->get();
         $dates = courses::selectRaw('DATE_FORMAT(date, "%Y-%m") as date')
@@ -80,6 +80,7 @@ class coursesController extends Controller
      */
     public function show(Request $request)
     {
+        
         if (App::getLocale() == 'ar') {
             $lang = 'ar';
         } else {
@@ -87,7 +88,7 @@ class coursesController extends Controller
         }
         $footer_data = generalsetting::first();
         $sections = sections::where('status', 1)->get();
-        $gallery = gallery::where('status', 1)->take(5)->get();
+        $gallery = gallery::where('status', 1)->take(6)->get();
         
         // Initialize the courses query with join on courses_details
         $query = DB::table('courses')

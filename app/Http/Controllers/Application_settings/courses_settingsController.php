@@ -45,40 +45,53 @@ class courses_settingsController extends Controller
    *
    * @return Response
    */
-  public function store(Storecourses $request)
-  {
-    if(courses::where('name->ar',$request->name_ar)->orwhere('name->en',$request->name_en)->exists())
-    {
-        return  redirect()->back()->withErrors([trans('sections_trans.existes') ]);
+public function store(Request $request)
+{
+    // تحقق من أن اسم الدورة موجود بالفعل بأي من اللغتين
+    if (courses::where('name->ar', $request->name_ar)->orWhere('name->en', $request->name_en)->exists()) {
+        return redirect()->back()->withErrors([trans('sections_trans.existes')]);
     }
-    try
-    {
+
+    // تحقق من صحة البيانات القادمة
+    $request->validate([
+        'name_en' => 'required|string|max:255',
+        'name_ar' => 'required|string|max:255',
+        'sections' => 'required|integer|exists:sections,id',
+        'img' => 'file|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'file' => 'file|mimes:pdf,doc,docx|max:10240',
+    ]);
+
+    try {
+        // رفع الملفات
         $img = $this->file_storage($request->file('img'), 'img_courses');
-        $file = $this->file_storage($request->file('file'),'file_courses');
-        $validated = $request->validated();
-        $courses=new courses();
-        $courses->name=['en'=>$request->name_en,'ar'=>$request->name_ar];
-        $courses->introduction=['en'=>$request->introduction_en,'ar'=>$request->introduction_ar];
-        $courses->course_content=['en'=>$request->course_content_en,'ar'=>$request->course_content_ar];
-        $courses->status=1;
+        $file = $this->file_storage($request->file('file'), 'file_courses');
+
+        // إنشاء كائن جديد من courses وتعبئة البيانات
+        $courses = new courses();
+        $courses->name = ['en' => $request->name_en, 'ar' => $request->name_ar];
+        $courses->introduction = ['en' => $request->introduction_en, 'ar' => $request->introduction_ar];
+        $courses->course_content = ['en' => $request->course_content_en, 'ar' => $request->course_content_ar];
+        $courses->status = 1;
         $courses->img = $img;
         $courses->file = $file;
-        $courses->id_sections=$request->sections;
-        $courses->id_place=$request->place;
-        $courses->date=$request->date;
-        $courses->duration=$request->duration;
-        $courses->price=$request->price;
-        $courses->sorting=$request->sorting;
+        $courses->id_sections = $request->sections;
+        $courses->id_place = $request->place;
+        $courses->date = $request->date;
+        $courses->duration = $request->duration;
+        $courses->price = $request->price;
+        $courses->sorting = $request->sorting;
         $courses->user_add = Auth::user()->id;
         $courses->save();
-        session()->flash('add');
+
+        // عرض رسالة نجاح وتوجيه المستخدم
+        session()->flash('add', 'Course added successfully!');
         return redirect()->route('courses_details_settings.show', ['id' => $courses->id]);
 
-    }catch(\Exception $e)
-    {
-        return redirect()->back()->withErrors(['error'=>$e->getMessage()]);
+    } catch (\Exception $e) {
+        // التعامل مع الأخطاء وإعادة التوجيه مع رسالة الخطأ
+        return redirect()->back()->withErrors(['error' => $e->getMessage()]);
     }
-  }
+}
 
   /**
    * Display the specified resource.

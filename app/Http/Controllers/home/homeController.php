@@ -23,9 +23,10 @@ class homeController extends Controller
   {
     $footer_data = generalsetting::first();
     $sections = Sections::take(5)->get();
-    $gallery = gallery::take(5)->get();
+    $galleryhome = gallery::take(10)->get();
+    $gallery = gallery::take(6)->get();
     $category = Sections::all();
-    return view('website.index',compact('footer_data','sections','gallery','category'));
+    return view('website.index',compact('footer_data','sections','gallery','category','galleryhome'));
 
   }
 

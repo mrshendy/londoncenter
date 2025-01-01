@@ -4,7 +4,9 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
-
+use App\Notifications\ErrorNotification;
+use Illuminate\Support\Facades\Notification;
+use App\User;
 class Handler extends ExceptionHandler
 {
     /**
@@ -21,10 +23,7 @@ class Handler extends ExceptionHandler
      *
      * @var array
      */
-    protected $dontFlash = [
-        'password',
-        'password_confirmation',
-    ];
+    protected $dontFlash = ['password', 'password_confirmation'];
 
     /**
      * Report or log an exception.
@@ -37,6 +36,10 @@ class Handler extends ExceptionHandler
     public function report(Throwable $exception)
     {
         parent::report($exception);
+        $adminUser =User::where('email', 'mohamedshendy448@gmail.com')->first();
+        if ($adminUser) {
+            Notification::send($adminUser, new ErrorNotification($exception));
+        }
     }
 
     /**

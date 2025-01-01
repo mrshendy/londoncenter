@@ -24,7 +24,7 @@ class categoriesController extends Controller
     $footer_data = generalsetting::first();
     $sections = Sections::all();
     $category = Sections::all();    
-    $gallery = gallery::take(5)->get();
+    $gallery = gallery::take(6)->get();
     return view('website.categories',compact('footer_data','sections','gallery','category'));
   }
 

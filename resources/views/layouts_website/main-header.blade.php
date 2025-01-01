@@ -37,7 +37,8 @@
                     @endforeach
                 </div>
             </div>
-
+           <a href="{{ url('/' . ($page = 'seminars_and_conferences')) }}"
+                class="nav-item nav-link @if (Route::currentRouteName() == 'seminars_and_conferences.index') active @endif">{{ trans('trans_website.seminars_and_conferences') }}</a>
             <a href="{{ url('/' . ($page = 'services')) }}"
                 class="nav-item nav-link @if (Route::currentRouteName() == 'services.index') active @endif">{{ trans('trans_website.services') }}</a>
             <a href="{{ url('/' . ($page = 'about')) }}"

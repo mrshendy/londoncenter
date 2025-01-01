@@ -40,7 +40,7 @@
                 <div class="row g-2 pt-2">
                     @foreach ($gallery as $data)
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ asset($data->img) }}" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{ asset($data->img) }}" alt="" style="height: 100px;">
                         </div>
                     @endforeach
                   

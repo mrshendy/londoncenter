@@ -104,7 +104,8 @@ return [
         'send_request' => 'ارسل طلبك الان',
         'save' => 'ارسال',
         'close' => 'الغاء',
+         'seminars_and_conferences' => 'الندوات والمؤتمرات',  
+         'descriptions' => 'المحتوي',
+         'View seminars_and_conferences details' => ' تفاصيل الندوات والمؤتمرات',
 
-        
-        
 ];

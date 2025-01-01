@@ -121,6 +121,25 @@
                                     </div>
                                 </div>
                                 <!-- end col -->
+                                 <div class="col-xxl-4 col-lg-6">
+                                    <div class="card card-body text-center">
+                                        <div class="avatar-md mx-auto mb-3">
+                                            <div class="avatar-title bg-soft-light  border border-info p-2 text-success  rounded">
+                                                <script src="{{URL::asset('assets/images/icon/bhenfmcm.js')}}"></script>
+                                                <lord-icon
+                                                src="{{URL::asset('assets/images/icon/nnbhwnej.json')}}"
+                                                trigger="loop"
+                                                delay="500"
+                                                colors="primary:#646e78"
+                                                style="width:250px;height:250px">
+                                            </lord-icon>
+                                            </div>
+                                        </div>
+                                        <h4 class="card-title font">{{ trans('settings_trans.seminars_and_conferences') }}</h4>
+                                        <a href="{{ url('/' . $page='s_and_c_settings') }}" class="btn btn-info">{{ trans('settings_trans.Go_to_settings_now') }}</a>
+                                    </div>
+                                </div>
+                                <!-- end col -->
                             </div><!-- end row -->
                         </div><!-- end col -->
                     </div><!-- end row -->

@@ -37,9 +37,11 @@ Route::group(
             Route::resource('contact',       'contactController');
             Route::resource('categories',    'categoriesController');
             Route::resource('courses',       'coursesController');
+            Route::resource('seminars_and_conferences', 's_and_cController');
             Route::resource('join_request',  'requestsjoincontroller');
-           
+            Route::resource('gallery',       'galleryController');
             Route::get('/detailsCourse/{id}','detailsCourseController@show')->name('detailsCourse.show');
+            Route::get('/detailss_and_c/{id}','detailss_and_cController@show')->name('detailss_and_c.show');
             Route::get('/courses/filter', [coursesController::class, 'show'])->name('courses.filter');
         });
         //     Route::get('/{page}', 'AdminController@index');

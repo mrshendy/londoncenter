@@ -43,8 +43,15 @@ Route::group(['middleware'=>['guest']],function(){
             Route::resource('general_settings',  'generalsettingController');
             Route::resource('gallery_settings',  'gallery_settingsController');
 
+                //currencies settings
+            Route::resource('s_and_c_settings', 's_and_c_settingsController');
+            Route::get('/s_and_c_settings/{id}','s_and_c_settingsController@show')->name('s_and_c_settings.show');
+            
             Route::resource('courses_details_settings', 'courses_details_settingsController');
             Route::get('/courses_details_settings/{id}','courses_details_settingsController@show')->name('courses_details_settings.show');
+            
+            Route::resource('s_and_c_d_settings', 's_and_c_d_settingsController');
+            Route::get('/s_and_c_d_settings/{id}','s_and_c_d_settingsController@show')->name('s_and_c_d_settings.show');
         });
       
         Route::group(['namespace'=>'dashbord'],function()

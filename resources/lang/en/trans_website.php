@@ -101,4 +101,8 @@ return [
         'send_request' => 'Send your request now',
         'save' => 'Send',
         'close' => 'Close',
+        'seminars_and_conferences' => 'Seminars And Conferences',      
+         'descriptions' => 'description',
+         'View seminars_and_conferences details' => 'View Seminars And Conferences Details',
+
 ];

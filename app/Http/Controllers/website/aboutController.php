@@ -23,7 +23,7 @@ class aboutController extends Controller
   {
     $footer_data = generalsetting::first();
     $sections = Sections::take(5)->get();
-    $gallery = gallery::take(5)->get();
+    $gallery = gallery::take(6)->get();
     $category = Sections::all();
     return view('website.about',compact('footer_data','sections','gallery','category'));
   }

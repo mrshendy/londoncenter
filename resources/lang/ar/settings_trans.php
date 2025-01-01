@@ -48,8 +48,8 @@ return [
     'sections_select' => 'اختيار القسم',
     'introduction_ar' => 'المقدمة عربي',
     'introduction_en' => 'المقدمة انجليزي',
-    'course_content_ar' => 'محتوي الكورس عربي',
-    'course_content_en' => 'محتوي الكورس انجليزي',
+    'course_content_ar' => 'محتوي  عربي',
+    'course_content_en' => 'محتوي  انجليزي',
     'price' => 'السعر',
     'file' => 'الملف',
     'place' => 'المكان',
@@ -85,5 +85,7 @@ return [
     'courses_data' => 'بيانات الكورس',
     'courses_ditils' => 'تفاصيل الكورس',
     'update_Countries' => 'تعديل بيانات كورس',
+     'seminars_and_conferences' => 'اعدادات الندوات والمؤتمرات ',  
+     'adds_and_c_settings' => 'اضافة الندوات والمؤتمرات ',  
 
 ];

@@ -24,7 +24,7 @@ class detailsCourseController extends Controller
         $date = generalsetting::first();
         $sections = Sections::where('status', 1)->get();
         $place = place::where('status', 1)->get();
-        $gallery = gallery::where('status', 1)->take(5)->get();
+        $gallery = gallery::where('status', 1)->take(6)->get();
         $courses = courses::with('sections')->where('status', 1)->orderBy('date')->get();
         return view('website.courses', compact('date', 'sections', 'gallery', 'courses', 'place'));
     }
@@ -59,7 +59,7 @@ class detailsCourseController extends Controller
         $footer_data = generalsetting::first();
         $sections = sections::where('status', 1)->get();
         $place = place::where('status', 1)->get();
-        $gallery = gallery::where('status', 1)->take(5)->get();
+        $gallery = gallery::where('status', 1)->take(6)->get();
         $category = sections::where('status', 1)->get();
         $courses = courses::with(['sections'])->findOrFail($id);
         $courses_details=courses_details::with(['place'])->where('course_id',$id)->where('status', 1)->get();
